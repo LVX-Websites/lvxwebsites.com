@@ -44,7 +44,7 @@ const features = [
 
 <section class="mb-24">
   <div class="container mx-auto px-4">
-    <dl class="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-11">
+    <div class="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-11">
       {features.map(feature => (
         <div class="flex">
           <div class="mr-5">
@@ -54,12 +54,12 @@ const features = [
               class="rounded-lg p-2 bg-gradient-to-b from-yellow-300 to-amber-400 text-emerald-500"
             />
           </div>
-          <div>
+          <dl>
             <dt class="text-xl font-medium mb-2">{feature.title}</dt>
             <dd>{feature.description}</dd>
           </div>
         </div>
       ))}
-    </dl>
+    </div>
   </div>
 </section>
