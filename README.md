@@ -1,7 +1,11 @@
 # LVXwebsites.com
 
-Astro Icon: https://www.astroicon.dev/guides/styling/
-Icons: https://icon-sets.iconify.design/
+## Tech stack
+
+* Astro.js
+* Tailwind
+* Astro Icon: https://www.astroicon.dev/guides/styling/
+* Icons: https://icon-sets.iconify.design/
 
 
 ## Astro Commands

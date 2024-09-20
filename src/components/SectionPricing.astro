@@ -46,7 +46,11 @@ const plans = [
 		prePrice: "starting at",
 		priceReg: "$399",
 		featureDescription: "Includes all Pro plan features, plus:",
-		features: ["Ecommerce storefront", "Custom app integrations"],
+		features: [
+			"Ecommerce storefront",
+			"Custom app integrations",
+			"A/B Testing",
+		],
 		border: "border-slate-300",
 	},
 ];
@@ -91,7 +95,7 @@ const plans = [
               {prePrice && (
                 <span>{prePrice}</span>
               )}
-              <span class={`text-3xl font-semibold  pr-2 ${priceSale && 'line-through text-gray-400'}`}>{priceReg}</span>
+              <span class={`text-3xl font-semibold  pr-2 ${priceSale && 'line-through text-gray-500'}`}>{priceReg}</span>
               {priceSale && (
                 <span class={`text-4xl font-semibold ${isHighlighted && 'text-emerald-600'}`}>{priceSale}</span>
               )}
@@ -114,7 +118,6 @@ const plans = [
           </div>
 
           <ButtonPricingCta isHighlighted={isHighlighted} />
-
         </div>
       ))}
     </div>
