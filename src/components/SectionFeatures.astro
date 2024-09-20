@@ -1,0 +1,65 @@
+---
+import { Icon } from "astro-icon/components";
+
+const features = [
+	{
+		title: "Search engine optimized",
+		icon: "line-md:gauge-loop",
+		description:
+			"We'll optimize your website to achieve a perfect 100 page speed score. This, along with designing for mobile and full accessibility helps rank your website near the top for your local search.",
+	},
+	{
+		title: "Professional Design",
+		icon: "mdi:design",
+		description:
+			"As of 2024, 46% of all internet traffic comes from mobile devices. We make sure your website looks just as good on a phone as it does on a workstation.",
+	},
+	// {
+	// 	title: "Mobile-first design",
+	// 	icon: "mdi:monitor-mobile-phone",
+	// 	description:
+	// 		"As of 2024, 46% of all internet traffic comes from mobile devices. We make sure your internet presence looks just as good on a phone as it does on a workstation.",
+	// },
+	{
+		title: "All Inclusive Service",
+		icon: "material-symbols:trophy-outline",
+		description:
+			"Professional design. Content writing. Search engine optimization. Website hosting. Ongoing maintenance. We handle everything regarding your website.",
+	},
+	{
+		title: "Lifetime updates",
+		icon: "material-symbols:update",
+		description:
+			"We don't charge by the hour for minor updates. Email us and we'll have them up ASAP. Or, if you prefer we can set you up with a simple content management system.",
+	},
+	{
+		title: "24/7 Support",
+		// icon: "material-symbols:contact-support-outline",
+		icon: "line-md:chat",
+		description:
+			"Contact us anytime for site updates or to discuss online strategy for your business.",
+	},
+];
+---
+
+<section class="mb-24">
+  <div class="container mx-auto">
+    <dl class="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-11">
+      {features.map(feature => (
+        <div class="flex">
+          <div class="mr-5">
+            <Icon
+              name={feature.icon}
+              size="72px"
+              class="rounded-lg p-2 bg-gradient-to-b from-yellow-300 to-amber-400 text-emerald-500"
+            />
+          </div>
+          <div>
+            <dt class="text-xl font-medium mb-2">{feature.title}</dt>
+            <dd>{feature.description}</dd>
+          </div>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

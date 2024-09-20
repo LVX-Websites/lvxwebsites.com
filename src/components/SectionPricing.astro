@@ -1,0 +1,122 @@
+---
+import { Icon } from "astro-icon/components";
+import ButtonPricingCta from "../components/ButtonPricingCta.astro";
+import H2 from "./H2.astro";
+
+const plans = [
+	{
+		title: "Starter",
+		description:
+			"Ideal for small businesses looking for a simple, impactful web presence.",
+		priceReg: "$200",
+		priceSale: "$99",
+		features: [
+			"Single page website",
+			"Premium web design",
+			"Search engine optmized",
+			"Content writing",
+			"Contact form",
+			"Basic site analytics",
+			"Unlimited edits",
+			"24/7 support",
+		],
+		border: "border-slate-300",
+	},
+	{
+		isHighlighted: true,
+		title: "Pro",
+		description: "Ideal for small to medium sized businesses looking to grow.",
+		priceReg: "$300",
+		priceSale: "$199",
+		featureDescription: "Includes all Starter plan features, plus:",
+		features: [
+			"Custom home page",
+			"Up to 5 additional pages",
+			"Contact page",
+			"Advanced site analytics",
+			"Domain registration & management",
+			"Content management system",
+		],
+		border: "border-emerald-500",
+	},
+	{
+		title: "Advanced",
+		description:
+			"Ideal for businesses looking to improve their processes with advanced customization.",
+		prePrice: "starting at",
+		priceReg: "$399",
+		featureDescription: "Includes all Pro plan features, plus:",
+		features: ["Ecommerce storefront", "Custom app integrations"],
+		border: "border-slate-300",
+	},
+];
+---
+
+<section class="mb-24">
+  <div class="container mx-auto">
+    <div class="text-center mb-12">
+      <!-- <h2 class="text-xl font-medium text-emerald-600">Pricing</h2>
+      <h3 class="text-5xl font-medium mb-5">Choose the right plan for you</h2> -->
+
+      <H2 text="Pricing" />
+      <h3 class="text-xl font-medium mb-2">Choose the right plan for you</h2>
+
+      <p>No heavy upfront costs. No Contracts. One simple monthly fee that includes (almost) everything.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-1 lg:grid-cols-3 max-w-sm  gap-6 sm:mx-auto lg:max-w-none">
+      {plans.map(({
+        title,
+        description,
+        features,
+        isHighlighted,
+        priceReg,
+        priceSale,
+        border,
+        featureDescription,
+        prePrice,
+      }) => (
+        <div class={`${border} border-2 rounded-xl flex flex-col justify-between p-8`}>
+          <div>
+            {isHighlighted && (
+              <span class="float-right rounded-full bg-emerald-100 px-2 py-1 text-xs font-semibold text-emerald-700">
+                Most popular
+              </span>
+            )}
+            <h4 class={`text-2xl font-semibold mb-6 ${isHighlighted && 'text-emerald-600'}`}>
+              {title}
+            </h4>
+
+            <div class="mb-6">
+              {prePrice && (
+                <span>{prePrice}</span>
+              )}
+              <span class={`text-3xl font-semibold  pr-2 ${priceSale && 'line-through text-gray-400'}`}>{priceReg}</span>
+              {priceSale && (
+                <span class={`text-4xl font-semibold ${isHighlighted && 'text-emerald-600'}`}>{priceSale}</span>
+              )}
+              <span>/month</span>
+            </div>
+
+            {featureDescription && (
+              <p class="mb-4">{featureDescription}</p>
+            )}
+
+            <ul class="mb-4">
+              {features.map(feature => (
+                <li class="flex items-center">
+                  <Icon name="mdi:check-bold" class="mr-2 text-emerald-500"/> {feature}
+                </li>
+              ))}
+            </ul>
+
+            <p class="mb-4 text-gray-500">{description}</p>
+          </div>
+
+          <ButtonPricingCta isHighlighted={isHighlighted} />
+
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

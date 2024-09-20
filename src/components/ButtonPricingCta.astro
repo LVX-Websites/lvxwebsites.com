@@ -1,0 +1,19 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+	isHighlighted?: boolean;
+}
+
+const { isHighlighted = false } = Astro.props;
+
+const color = isHighlighted
+	? "bg-emerald-500 hover:bg-emerald-600 text-white"
+	: "bg-amber-200 hover:bg-yellow-300 text-emerald-600";
+---
+<button
+  type="button"
+  class={`buttonContact w-full rounded-lg px-6 py-3 font-medium text-xl ${color}`}
+>
+  Get started
+</button>
